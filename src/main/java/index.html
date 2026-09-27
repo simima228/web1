@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Попадание точки онлайн</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__name">Лабораторная №1<span class="header__name-copyright">©</span></h1>
+        <nav class="header__nav">
+            <a class="header__nav-item active" href="#form">
+                Попадание точек
+            </a>
+            <a class="header__nav-item" href="#history">
+                История
+            </a>
+            <a class="header__nav-item" href="#pricing">
+                Тарифы
+            </a>
+        </nav>
+        <div class="header__info">
+            <p>Трикашный Максим Дмитриевич</p>
+            <p>Группа: P3214</p>
+            <p>Вариант: 501865</p>
+        </div>
+    </header>
+
+    <section id="form">
+        <h2 class="form__title">Параметры точки</h2>
+        <div class="form__layout">
+        <form class="form__point" novalidate>
+            <div class="field">
+                <label for="x">Координата X</label>
+                <input type="number" id="x" name="x" min="-5" max="5" step="any" placeholder="0" required>
+            </div>
+            <div class="field">
+                <label for="y">Координата Y</label>
+                <select id="y" name="y" required></select>
+            </div>
+              <fieldset class="field field__radio">
+                  <legend>Радиус R</legend>
+              </fieldset>
+            <div class="actions">
+                <button type="submit" class="btn btn__main">Отправить</button>
+            </div>
+        </form>
+            <div class="canvas__wrap">
+                <canvas id="canvas" width="400" height="400"></canvas>
+            </div>
+        </div>
+        <p id="result" class="result"></p>
+    </section>
+    <section id="history">
+        <table class="history">
+            <thead>
+            <tr>
+                <th>X</th>
+                <th>Y</th>
+                <th>R</th>
+                <th>Результат</th>
+                <th>Время</th>
+            </tr>
+            </thead>
+            <tbody id="history__body"></tbody>
+        </table>
+    </section>
+    <section id="pricing">
+
+    </section>
+</body>
+</html>
