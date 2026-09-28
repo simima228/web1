@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Попадание точки онлайн</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -25,7 +27,7 @@
             <p>Вариант: 501865</p>
         </div>
     </header>
-
+    <main>
     <section id="form">
         <h2 class="form__title">Параметры точки</h2>
         <div class="form__layout">
@@ -36,10 +38,41 @@
             </div>
             <div class="field">
                 <label for="y">Координата Y</label>
-                <select id="y" name="y" required></select>
+                <select id="y" name="y" required>
+                    <option value="" disabled selected>Выберите Y</option>
+                    <option value="-2">-2</option>
+                    <option value="-1.5">-1.5</option>
+                    <option value="-1">-1</option>
+                    <option value="-0.5">-0.5</option>
+                    <option value="0">0</option>
+                    <option value="0.5">0.5</option>
+                    <option value="1.5">1.5</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                </select>
             </div>
               <fieldset class="field field__radio">
                   <legend>Радиус R</legend>
+                  <label class="radio">
+                      <input type="radio" name="r" value="1" required checked>
+                      1
+                  </label>
+                  <label class="radio">
+                      <input type="radio" name="r" value="2">
+                      2
+                  </label>
+                  <label class="radio">
+                      <input type="radio" name="r" value="3">
+                      3
+                  </label>
+                  <label class="radio">
+                      <input type="radio" name="r" value="4">
+                      4
+                  </label>
+                  <label class="radio">
+                      <input type="radio" name="r" value="5">
+                      5
+                  </label>
               </fieldset>
             <div class="actions">
                 <button type="submit" class="btn btn__main">Отправить</button>
@@ -68,5 +101,6 @@
     <section id="pricing">
 
     </section>
+    </main>
 </body>
 </html>

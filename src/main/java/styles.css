@@ -2,6 +2,13 @@
     --blue: #2c5d7c;
     --outline-blue: #7fa9c9;
     --border-blue: #1a3d54;
+
+    --grid: #b6cbdb;
+    --grid-light: #dde9f2;
+    --canvas-bg: #f4f9fd;
+
+    --hit: #2d7d5a;
+    --miss: #b03a2e;
 }
 
 * {
@@ -13,10 +20,13 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    padding-top: 100px;
+    padding-top: 120px;
 }
-
+section {
+    scroll-margin-top: 140px;
+}
 .header {
+    min-height: 120px;
     font-family: fantasy, sans-serif;
     z-index: 999;
     position: fixed;
@@ -114,11 +124,180 @@ body {
 }
 
 #form {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 40px auto;
     padding: 30px 40px;
     background-color: white;
     border-radius: 16px;
     box-shadow: 0 8px 30px rgba(120, 170, 210, 0.15);
-    border: 1px solid rgba(150, 200, 230, 0.4)
+    border: 1px solid rgba(150, 200, 230, 0.4);
+    font-family: Rubik, sans-serif;
+}
+
+.form__title {
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--blue);
+    margin-bottom: 25px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.form__layout {
+    display: flex;
+    align-items: start;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form__point {
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.field label, .field legend {
+    font-size: 15px;
+    color: #4a6b82;
+}
+.field input[type="number"], .field select {
+    padding: 10px 14px;
+    font-size: 16px;
+    font-family: inherit;
+    color: var(--blue);
+    background-color: #f4f9fd;
+    border: 1px solid #cfe6f7;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+.field input[type="number"]:focus, .field select:focus {
+    border-color: var(--outline-blue);
+    box-shadow: 0 0 0 3px rgba(127, 169, 201, 0.2);
+}
+
+.field input::placeholder {
+    color: #a8c2d4;
+}
+
+.field__radio {
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.field__radio legend {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.radio {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 6px;
+    min-width: 54px;
+    padding: 10px 10px;
+    background-color: #f4f9fd;
+    border: 1px solid #cfe6f7;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.25s, border-color 0.25s, color 0.25s;
+    font-size: 15px;
+    color: var(--blue);
+    user-select: none;
+}
+
+.radio:hover {
+    background-color: #eaf6fd;
+    border-color: #b8dcf0;
+}
+
+.radio input[type="radio"] {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio:has(input:checked) {
+    background-color: var(--blue);
+    border-color: var(--blue);
+    color: #ffffff;
+}
+
+.radio:has(input:focus-visible) {
+    outline: 2px solid var(--outline-blue);
+    outline-offset: 3px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 12px 40px;
+    font-size: 17px;
+    font-family: inherit;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+    letter-spacing: 1px;
+}
+
+.btn__main {
+    background: linear-gradient(135deg, #7fa9c9, #5a8fb3);
+    color: white;
+    box-shadow: 0 4px 12px rgba(120, 170, 210, 0.4);
+}
+
+.btn__main:hover {
+    background: linear-gradient(135deg, #6a9abd, #4a7fa3);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(120, 170, 210, 0.5);
+}
+
+.btn__main:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(120, 170, 210, 0.4);
+}
+
+.btn__main:focus { outline: none; }
+
+.btn__main:focus-visible {
+    outline: 2px solid var(--outline-blue);
+    outline-offset: 3px;
+}
+
+#canvas {
+    display: block;
+    border-radius: 8px;
+    cursor: crosshair;
+}
+
+.canvas__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f9fd;
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px solid #cfe6f7;
 }
